@@ -13,3 +13,6 @@ class Contact(models.Model): #herda do models model, sintetizo uma tabela a part
     #uma string na base de dados do tipo charfield eh limitada um text field nao tenho q passar a limitacao
     #id n precisa colocar pois eh automatico
     #criar uma migration sempre ao editar o model
+    
+    def __str__(self) -> str: #indica que retorna uma string
+        return f"{self.first_name} {self.last_name}" #imprime o str la no admin do django
