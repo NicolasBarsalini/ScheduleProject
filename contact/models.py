@@ -2,6 +2,8 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 
+#sempre criar uma migration e executar-la ao mexer no models
+
 # Create your models here.
 class Category(models.Model):
     class Meta:
