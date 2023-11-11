@@ -17,8 +17,8 @@
     </nav>
 
     <div class="search">
-        <form action="" method="get"> <!--esse get, ele vai atrelhar o nome do campo input na minha url e action eh pra onde vou postar o formulario--> 
-            <input type="text" class="search-input" placeholder="Search" id="Search" name="q">
-        </form>
+        <form action="{% url 'contact:search' %}" method="GET"> <!--esse get, ele vai atrelhar o nome do campo input na minha url e action eh pra onde vou postar o formulario--> 
+            <input type="text" class="search-input" placeholder="Search" id="Search" name="q" value={{ request.GET.q.strip }}> <!--Posso pegar a propria request pra manter no valor do search-->
+        </form> <!--essa action diz q vai pra url do contato search, o valor conseguimos obter atraves do get-->
     </div>
 </header>

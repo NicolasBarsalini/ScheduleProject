@@ -1,0 +1,33 @@
+{% extends "global/base.html" %}
+
+{% block content %}
+
+ <!--Formulario HTML-->
+ <!--no django devemos previnir ataques csrf para evitar ataques ao forms do site-->
+ <div class="form-wrapper">
+
+    <h2>Contact</h2> <!--metodo post no html, diferente do get que preenche uma url, o post utiliza para coisas mais sensiveis, o usuario e senha n aparece na url-->
+    <!--enctype="multipart/form-data" -> posso enviar arquivos, como fotos, por exemplo-->
+    <form 
+      action="{% url 'contact:create' %}"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+
+    {% csrf_token %} <!--declaro uma tag do crsf token, garantindo que os dados que vão chegar na minha view, são os do formulario-->
+
+      <div class="form-content">
+        <div class="form-group">
+          <label for="id_first_name">NOME</label>
+          <input type="text" name="first_name" maxlength="255" id="id_first_name">
+        </div>
+
+      <div class="form-content">
+        <div class="form-group">
+          <button class="btn" type="submit">Send</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+{% endblock content %}
