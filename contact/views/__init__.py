@@ -4,3 +4,4 @@
 # type: ignore
 from .contact_forms import *
 from .contact_views import * #importo tudo q tem dentro do módulo contact_views antes de qualquer coisa
+from .user_forms import *

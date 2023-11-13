@@ -6,6 +6,8 @@
 <body>
     {% include "global/partials/header.html" %}
 
+    {% include "global/partials/_message.html" %}
+
     <main class="content">
         {% block content %} {% endblock content %} <!--Faço o body todo dentro desse content-->
         {% include "global/partials/_pagination.html" %} <!--pagination do django-->
